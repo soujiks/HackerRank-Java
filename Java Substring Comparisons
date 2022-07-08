@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Solution {
+
+    public static String getSmallestAndLargest(String s, int k) {
+        String smallest = "";
+        String largest = "";
+        java.util.ArrayList<String> aList= new  java.util.ArrayList<String>();
+        // Complete the function
+        // 'smallest' must be the lexicographically smallest substring of length 'k'
+        // 'largest' must be the lexicographically largest substring of length 'k'
+        for(int i=0;i<s.length()-k+1; i++){
+            //System.out.println(s.substring(i, i+k));
+            aList.add(s.substring(i, i+k));
+        }
+        java.util.Collections.sort(aList);
+       // for(String a: aList)
+       //  System.out.println(a);
+        smallest=(aList.get(0));
+        largest=(aList.get(aList.size()-1));
+        return smallest + "\n" + largest;
+    }
+
